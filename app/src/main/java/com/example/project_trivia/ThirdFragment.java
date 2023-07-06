@@ -1,5 +1,6 @@
 package com.example.project_trivia;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -50,7 +51,11 @@ public class ThirdFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-private  boolean resultCorrect = false;
+
+    private boolean resultCorrect = false;
+    private Drawable imageCongrats;
+    private Drawable imageSad;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,10 +70,14 @@ private  boolean resultCorrect = false;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentThirdBinding.inflate(getLayoutInflater(), container, false);
+        imageSad = getResources().getDrawable(R.drawable.sad);
+        imageCongrats = getResources().getDrawable(R.drawable.congrats);
         if(resultCorrect == true){
             binding.textViewRespuesta.setText("Muy bien "+ mParam1 + " has contestado correctamente!");
+            binding.imageViewRespuesta.setImageDrawable(imageCongrats);
         } else  {
             binding.textViewRespuesta.setText("Te equivocaste " + mParam1 + " ¡Intentalo denuevo!");
+            binding.imageViewRespuesta.setImageDrawable(imageSad);
         }
         binding.buttonReintentar.setOnClickListener(v -> {
             Bundle bundle = new Bundle();

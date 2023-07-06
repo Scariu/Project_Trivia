@@ -13,13 +13,12 @@
         android:id="@+id/textViewRespuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:text="Respuesta"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,17 +29,29 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
         android:backgroundTint="#FF6A53"
         android:gravity="center"
         android:text="Intentalo otra vez"
         android:textSize="20sp"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRespuesta"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewRespuesta" />
+
+    <ImageView
+        android:id="@+id/imageViewRespuesta"
+        android:layout_width="295dp"
+        android:layout_height="348dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReintentar"
+        app:layout_constraintVertical_bias="0.473" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
