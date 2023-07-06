@@ -3,6 +3,7 @@ package com.example.project_trivia;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +65,13 @@ public class FirstFragment extends Fragment {
         binding = FragmentFirstBinding.inflate(getLayoutInflater(), container, false);
         binding.textViewBienvenida.setText("¡Bienvenido a Tivia!");
         binding.textViewIngrese.setText("Ingrese su nombre para comenzar");
+        binding.buttonComenzar.setOnClickListener(v -> {
+            String nombre = binding.editTextNombre.getText().toString();
+            Bundle bundle = new Bundle();
+                    bundle.putString("nombre", nombre);
+                    Navigation.findNavController(getView()).navigate(R.id.action_firstFragment_to_secondFragment);
+                }
+        );
         return binding.getRoot();
     }
 }
