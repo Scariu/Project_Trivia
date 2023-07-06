@@ -73,7 +73,7 @@ public class ThirdFragment extends Fragment {
         imageSad = getResources().getDrawable(R.drawable.sad);
         imageCongrats = getResources().getDrawable(R.drawable.congrats);
         if(resultCorrect == true){
-            binding.textViewRespuesta.setText("Muy bien "+ mParam1 + " has contestado correctamente!");
+            binding.textViewRespuesta.setText("Muy bien "+ mParam1 + " ¡Has contestado correctamente!");
             binding.imageViewRespuesta.setImageDrawable(imageCongrats);
         } else  {
             binding.textViewRespuesta.setText("Te equivocaste " + mParam1 + " ¡Intentalo denuevo!");

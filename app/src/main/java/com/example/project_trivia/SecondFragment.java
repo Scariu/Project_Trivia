@@ -66,7 +66,8 @@ public class SecondFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSecondBinding.inflate(getLayoutInflater(), container, false);
-        binding.textViewHolaNombre.setText("Hola, " + mParam1);
+        binding.textViewHolaNombre.setText("Hola " + mParam1 + "!");
+        binding.textViewPregunta.setText("¿Como se llama el personaje de la imagen?");
         binding.buttonEnviar.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             boolean result = false;
