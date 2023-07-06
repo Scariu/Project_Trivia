@@ -8,12 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.project_trivia.databinding.FragmentSecondBinding;
+import com.example.project_trivia.databinding.FragmentThirdBinding;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ThirdFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class ThirdFragment extends Fragment {
+    private FragmentThirdBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,20 +49,27 @@ public class ThirdFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
+private  boolean resultCorrect = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam1 = getArguments().getString("nombre");
             mParam2 = getArguments().getString(ARG_PARAM2);
+            resultCorrect = getArguments().getBoolean("respuesta");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        binding = FragmentThirdBinding.inflate(getLayoutInflater(), container, false);
+        if(resultCorrect == true){
+            binding.textViewRespuesta.setText("Muy bien "+ mParam1 + " has contestado correctamente!");
+        } else  {
+            binding.textViewRespuesta.setText("Te equivocaste " + mParam1 + " ¡Intentalo denuevo!");
+        }
+        return binding.getRoot();
     }
+
 }

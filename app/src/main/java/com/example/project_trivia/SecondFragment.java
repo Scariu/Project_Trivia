@@ -3,10 +3,12 @@ package com.example.project_trivia;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.project_trivia.databinding.FragmentFirstBinding;
 import com.example.project_trivia.databinding.FragmentSecondBinding;
@@ -65,6 +67,20 @@ public class SecondFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentSecondBinding.inflate(getLayoutInflater(), container, false);
         binding.textViewHolaNombre.setText("Hola, " + mParam1);
+        binding.buttonEnviar.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            boolean result = false;
+            if (binding.radioGroupPokemon.getCheckedRadioButtonId() == binding.radioButtonPikachu.getId()) {
+                result = true;
+            } else if (binding.radioGroupPokemon.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(getContext(), "Selecciona una opción", Toast.LENGTH_SHORT).show();
+            } else {
+                result= false;
+            }
+            bundle.putBoolean("respuesta", result);
+            bundle.putString("nombre", mParam1);
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
+        });
         return binding.getRoot();
     }
 }
