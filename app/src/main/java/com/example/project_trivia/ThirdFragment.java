@@ -3,6 +3,7 @@ package com.example.project_trivia;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +70,11 @@ private  boolean resultCorrect = false;
         } else  {
             binding.textViewRespuesta.setText("Te equivocaste " + mParam1 + " ¡Intentalo denuevo!");
         }
+        binding.buttonReintentar.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("nombre", mParam1);
+            Navigation.findNavController(getView()).navigate(R.id.action_thirdFragment_to_secondFragment,bundle);
+        });
         return binding.getRoot();
     }
 
