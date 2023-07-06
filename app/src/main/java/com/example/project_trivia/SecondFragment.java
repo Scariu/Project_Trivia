@@ -71,13 +71,16 @@ public class SecondFragment extends Fragment {
         binding.buttonEnviar.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             boolean result = false;
-            if (binding.radioGroupPokemon.getCheckedRadioButtonId() == binding.radioButtonPikachu.getId()) {
-                result = true;
-            } else if (binding.radioGroupPokemon.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(getContext(), "Selecciona una opción", Toast.LENGTH_SHORT).show();
-            } else {
-                result= false;
-            }
+
+                if (binding.radioGroupPokemon.getCheckedRadioButtonId() == binding.radioButtonPikachu.getId()) {
+                    result = true;
+                } else if (binding.radioGroupPokemon.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(getContext(), "Selecciona una opción", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    result= false;
+                }
+
             bundle.putBoolean("respuesta", result);
             bundle.putString("nombre", mParam1);
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
