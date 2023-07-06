@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment" >
+    android:background="#FF6A53"
+    tools:context=".SecondFragment">
 
     <TextView
         android:id="@+id/textViewHolaNombre"
@@ -13,7 +14,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
-        android:text="TextView"
+        android:text="Hola"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +36,7 @@
             android:id="@+id/radioButtonCharmander"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FDF3DB"
             android:text="Charmander"
             android:textSize="16sp" />
 
@@ -42,6 +44,7 @@
             android:id="@+id/radioButtonPikachu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FDF3DB"
             android:text="Pikachu"
             android:textSize="16sp" />
 
@@ -49,6 +52,7 @@
             android:id="@+id/radioButtonSquirtle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FDF3DB"
             android:text="Squirtle"
             android:textSize="16sp" />
 
@@ -56,6 +60,7 @@
             android:id="@+id/radioButtonBulbasur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FDF3DB"
             android:text="Bulbasur"
             android:textSize="16sp" />
     </RadioGroup>
@@ -68,14 +73,18 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="64dp"
+        android:backgroundTint="#FCCCA4"
+        android:gravity="center"
         android:text="Enviar"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroupPokemon"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <ImageView
         android:id="@+id/imagePikachu"
@@ -97,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="¿?"
         app:layout_constraintEnd_toEndOf="@+id/imagePikachu"
         app:layout_constraintStart_toStartOf="@+id/imagePikachu"
         app:layout_constraintTop_toBottomOf="@+id/imagePikachu" />

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FCCCA4"
     tools:context=".ThirdFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,7 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="Respuesta"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,13 +26,19 @@
         android:id="@+id/buttonReintentar"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        android:gravity="center"
         android:text="Intentalo otra vez"
         android:textSize="20sp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRespuesta"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintVertical_bias="0.463" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
