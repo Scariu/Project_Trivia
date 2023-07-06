@@ -69,7 +69,7 @@ public class FirstFragment extends Fragment {
             String nombre = binding.editTextNombre.getText().toString();
             Bundle bundle = new Bundle();
                     bundle.putString("nombre", nombre);
-                    Navigation.findNavController(getView()).navigate(R.id.action_firstFragment_to_secondFragment);
+                    Navigation.findNavController(getView()).navigate(R.id.action_firstFragment_to_secondFragment,bundle);
                 }
         );
         return binding.getRoot();
